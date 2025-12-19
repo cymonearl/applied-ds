@@ -130,12 +130,31 @@ with tab_overview:
         """)
     st.markdown("""<div class="result-alert">Result: Data ingestion is optimized using Polars for high-speed columnar processing, ensuring a clean and reliable feature set for modeling.</div>""", unsafe_allow_html=True)
 
+    # 1. Calculation Logic
+    # Calculate Average Stress for the KPI
+    avg_val = df["stress_level"].mean()
+    rounded_avg = int(round(avg_val))
+    
+    # Meta dictionary for consistent styling
+    meta = {0: ("Low", "#10b981", "😊"), 1: ("Medium Low", "#3b82f6", "🙂"), 
+            2: ("Medium", "#f59e0b", "😐"), 3: ("Medium High", "#f97316", "😟"), 4: ("High", "#ef4444", "😰")}
+    avg_name, avg_color, avg_icon = meta[rounded_avg]
+
     st.markdown('<h2 class="section-title">Dataset Health Overview</h2>', unsafe_allow_html=True)
-    k_col1, k_col2, k_col3, k_col4 = st.columns(4)
+    k_col1, k_col2, k_col3, k_col4, k_col5 = st.columns(5)
+    
     k_col1.markdown(f'<div class="kpi-card"><div class="kpi-label">Samples</div><div class="kpi-value">{len(df)}</div></div>', unsafe_allow_html=True)
     k_col2.markdown(f'<div class="kpi-card"><div class="kpi-label">Features</div><div class="kpi-value">{len(feature_cols)}</div></div>', unsafe_allow_html=True)
     k_col3.markdown('<div class="kpi-card"><div class="kpi-label">Model Accuracy</div><div class="kpi-value">98.0%</div></div>', unsafe_allow_html=True)
     k_col4.markdown('<div class="kpi-card"><div class="kpi-label">Class Count</div><div class="kpi-value">5</div></div>', unsafe_allow_html=True)
+    
+    # New Average Stress KPI card using your meta colors
+    k_col5.markdown(f"""
+        <div class="kpi-card" style="border-left: 5px solid {avg_color};">
+            <div class="kpi-label">Avg. Stress ({avg_name})</div>
+            <div class="kpi-value" style="color: {avg_color};">{avg_val:.2f} {avg_icon}</div>
+        </div>
+    """, unsafe_allow_html=True)
 
     st.markdown("#### Feature Distributions")
     # Generating distribution plots for the first 6 features
