@@ -244,6 +244,8 @@ with tab_analysis:
 # TAB 4: MODEL DETAILS (Performance & Evaluation)
 # ------------------------------------------------------------
 with tab_model:    
+    st.markdown('<h2 class="section-title">Model Development & Evaluation</h2>', unsafe_allow_html=True)
+
     m_col1, m_col2 = st.columns(2)
     with m_col1:
         st.markdown(f"**Accuracy Score**\n# 0.9800")
@@ -325,7 +327,6 @@ with tab_about:
     with col_ab2:
         st.markdown('<div class="kpi-card"><div class="kpi-label">System Version</div><div class="kpi-value">v1.0.2</div></div>', unsafe_allow_html=True)
         st.markdown('<div class="kpi-card" style="margin-top:10px;"><div class="kpi-label">Deployment</div><div class="kpi-value">Streamlit Cloud</div></div>', unsafe_allow_html=True)
-    st.markdown('<h2 class="section-title">Model Development & Evaluation</h2>', unsafe_allow_html=True)
     st.markdown('<h2 class="section-title">Dataset Source & Research Context</h2>', unsafe_allow_html=True)
     
     col_ab1, col_ab2 = st.columns([2, 1])
