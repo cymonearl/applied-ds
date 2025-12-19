@@ -388,7 +388,50 @@ with tab_about:
     </table>
     """, unsafe_allow_html=True)
 
+    # ------------------------------------------------------------
+    # SECTION: CRITICAL EVALUATION
+    # ------------------------------------------------------------
+    st.markdown('<h2 class="section-title">Critical Evaluation</h2>', unsafe_allow_html=True)
+    
+    col_eval1, col_eval2 = st.columns(2)
+    with col_eval1:
+        st.markdown("#### 1. Data Scale & Model Trustworthiness")
+        st.markdown(f"""
+        - **Limited Observations:** Although the model demonstrates impressive performance (98% accuracy), it was trained on only **630 observations**. 
+        - **Trust Concerns:** Due to the small size of the dataset, the results cannot be fully trusted for general population application. Small datasets are prone to overfitting and may not accurately reflect the physiological diversity of the real world.
+        """)
+    with col_eval2:
+        st.markdown("#### 2. Requirement for Scaling")
+        st.markdown(f"""
+        - **Data Scaling:** To achieve more trustworthy and robust results, the dataset needs to be scaled up significantly. 
+        - **Reliability Gap:** Expanding the data pool is essential to ensure the model can handle a wider range of physiological anomalies and varied sleep patterns effectively.
+        """)
+    
+    st.markdown("""<div class="result-alert">Notice: High accuracy scores should be viewed with caution; the limited 630-row dataset means the model requires broader validation before it can be considered clinically reliable.</div>""", unsafe_allow_html=True)
+
+    # ------------------------------------------------------------
+    # SECTION: FUTURE ROADMAP & RECOMMENDATIONS
+    # ------------------------------------------------------------
+    st.markdown('<h2 class="section-title">Future Roadmap & Recommendations</h2>', unsafe_allow_html=True)
+    
+    col_road1, col_road2 = st.columns(2)
+    with col_road1:
+        st.markdown("#### Phase 1: Demographic Integration")
+        st.markdown(f"""
+        - **Patient Demographics:** Future iterations must incorporate user demographic data, such as Age, Weight, and specifically **Gender**.
+        - **Personalized Monitoring:** Integrating these factors will allow the system to move toward personalized stress assessment rather than a one-size-fits-all approach.
+        """)
+    with col_road2:
+        st.markdown("#### Phase 2: Biological & Hormonal Factors")
+        st.markdown(f"""
+        - **Testosterone Levels:** Gender is a critical factor because biological markers, such as testosterone levels, can significantly influence an individual's physiological stress markers.
+        - **Enhanced Diagnostics:** Correlating hormonal data with sleep telemetry will provide a much deeper level of diagnostic accuracy and personalized health insights.
+        """)
+
+    st.markdown("""<div class="result-alert">Vision: Scaling the dataset and incorporating biological demographics like testosterone levels will evolve SayoPillow into a truly robust and personalized diagnostic system.</div>""", unsafe_allow_html=True)    
+    
     st.markdown('<h2 class="section-title">Official Publication</h2>', unsafe_allow_html=True)
+    
     st.info("""
     **Citation:** Rachakonda, L., Mohanty, S. P., Kougianos, E., & Sundaravadivel, P. (2020). 
     *SaYoPillow: Blockchain-Integrated Privacy-Assured IoMT Framework for Stress Management Considering Sleeping Habits.* IEEE Transactions on Consumer Electronics, 66(4), 338-347.
