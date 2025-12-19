@@ -248,13 +248,13 @@ with tab_model:
 
     m_col1, m_col2 = st.columns(2)
     with m_col1:
-        st.markdown(f"**Accuracy Score**\n# 0.9800")
+        st.markdown(f"**Accuracy Score**\n# 0.98")
         st.markdown("""<div class="definition-box"><h4>Definition: Accuracy</h4>
         <p>The proportion of correctly predicted stress levels among the total number of cases. 
         A 0.98 score indicates exceptionally high reliability in sleep-stress mapping.</p></div>""", unsafe_allow_html=True)
 
     with m_col2:
-        st.markdown(f"**Weighted F1-Score**\n# 0.9800")
+        st.markdown(f"**Weighted F1-Score**\n# 0.98")
         st.markdown("""<div class="definition-box"><h4>Definition: F1-Score</h4>
         <p>The harmonic mean of precision and recall. This metric ensures the model performs well 
         across all 5 levels, even if some categories were less frequent.</p></div>""", unsafe_allow_html=True)
