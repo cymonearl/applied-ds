@@ -90,6 +90,27 @@ tab_overview, tab_prediction, tab_analysis, tab_model, tab_about = st.tabs(
 # ------------------------------------------------------------
 with tab_overview:
     # --- SECTION A: DATA PREPROCESSING ---
+
+    st.markdown('<h2 class="section-title">Problem Statement: SaYoPillow Stress Detection</h2>', unsafe_allow_html=True)
+    
+    col_prob1, col_prob2 = st.columns(2)
+    with col_prob1:
+        st.markdown("#### 1. The Clinical Challenge")
+        st.markdown("""
+        - **Subtle Triggers:** Psychological stress is a pervasive health issue, but its physiological triggers are often subtle and manifest most clearly during sleep.
+        - **Subjective Bias:** Traditional stress assessment relies on self-reporting, which is often inaccurate, biased, or inconsistent.
+        - **Invasive Monitoring:** Existing clinical monitoring is often invasive, making long-term, non-intrusive home assessment difficult.
+        """)
+    with col_prob2:
+        st.markdown("#### 2. The Technological Gap")
+        st.markdown("""
+        - **Multi-modal Integration:** Lack of unified systems that correlate respiration, SpO2, REM, and temperature into a single diagnostic score.
+        - **Granularity:** Most trackers provide binary "stressed vs. not stressed" data rather than a granular 5-level scale (Remedial to Extreme).
+        - **Privacy & Edge Computing:** Need for localized, privacy-assured frameworks like IoMT to handle sensitive medical telemetry securely.
+        """)
+    
+    st.markdown("""<div class="result-alert">Objective: To leverage an IoMT framework and Random Forest modeling to provide a non-invasive, high-precision tool for detecting and classifying human stress levels through sleep telemetry.</div>""", unsafe_allow_html=True)
+
     st.markdown('<h2 class="section-title">Data Preprocessing & Pipeline Optimization</h2>', unsafe_allow_html=True)
     
     col_pre1, col_pre2 = st.columns(2)
